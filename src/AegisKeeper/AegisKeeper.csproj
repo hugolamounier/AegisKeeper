@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <UserSecretsId>dotnet-AegisKeeper-432e48af-c5a9-4d3c-aa69-e82b8af30c58</UserSecretsId>
+        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.1"/>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Include="..\..\.dockerignore">
+        <Link>.dockerignore</Link>
+      </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\AegisKeeper.Core\AegisKeeper.Core.csproj" />
+      <ProjectReference Include="..\AegisKeeper.Database.SQLServer\AegisKeeper.Database.SQLServer.csproj" />
+      <ProjectReference Include="..\AegisKeeper.Storage.Google\AegisKeeper.Storage.Google.csproj" />
+    </ItemGroup>
+    
+    <Target Name="RestoreTools" BeforeTargets="Build">
+        <Exec Command="dotnet tool restore" />
+    </Target>
+</Project>

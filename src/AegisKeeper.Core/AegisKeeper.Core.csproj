@@ -6,4 +6,19 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <PackageReference Include="Cronos" Version="0.9.0" />
+      <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.1" />
+      <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.3" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="BackupDatabaseTransformBlock.cs">
+        <DependentUpon>BackupPipeline.cs</DependentUpon>
+      </Compile>
+      <Compile Update="UploadBackupTransformBlock.cs">
+        <DependentUpon>BackupPipeline.cs</DependentUpon>
+      </Compile>
+    </ItemGroup>
+
 </Project>
