@@ -6,11 +6,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AegisKeeper.Database.SQLSer
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AegisKeeper.Storage.Google", "src\AegisKeeper.Storage.Google\AegisKeeper.Storage.Google.csproj", "{A3DD9CA0-5870-435E-83D7-6FA59BA0888C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AegisKeeper_Old", "src\AegisKeeper_Old\AegisKeeper_Old.csproj", "{55052CB9-9B15-42C9-AAE5-D477B57DEB80}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AegisKeeper", "src\AegisKeeper\AegisKeeper.csproj", "{BAC9A863-67E2-4682-8A3D-C46D807B8058}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AegisKeeper", "src\AegisKeeper\AegisKeeper\AegisKeeper.csproj", "{9CE61701-589A-43D8-AF7E-8CB4734E2A81}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AegisKeeper.Client", "src\AegisKeeper.Client\AegisKeeper.Client.csproj", "{D008C94D-E851-49D9-BE74-B48423CE38E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AegisKeeper.Client", "src\AegisKeeper\AegisKeeper.Client\AegisKeeper.Client.csproj", "{E5E60307-8D32-42EA-BC6D-0F9D3AFD90C7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AegisKeeper.Shared", "src\AegisKeeper.Shared\AegisKeeper.Shared.csproj", "{4FBDE761-5C80-4C9C-88CD-3DFC87A7BC50}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,17 +30,17 @@ Global
 		{A3DD9CA0-5870-435E-83D7-6FA59BA0888C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A3DD9CA0-5870-435E-83D7-6FA59BA0888C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A3DD9CA0-5870-435E-83D7-6FA59BA0888C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{55052CB9-9B15-42C9-AAE5-D477B57DEB80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{55052CB9-9B15-42C9-AAE5-D477B57DEB80}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{55052CB9-9B15-42C9-AAE5-D477B57DEB80}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{55052CB9-9B15-42C9-AAE5-D477B57DEB80}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9CE61701-589A-43D8-AF7E-8CB4734E2A81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9CE61701-589A-43D8-AF7E-8CB4734E2A81}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9CE61701-589A-43D8-AF7E-8CB4734E2A81}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9CE61701-589A-43D8-AF7E-8CB4734E2A81}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E5E60307-8D32-42EA-BC6D-0F9D3AFD90C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E5E60307-8D32-42EA-BC6D-0F9D3AFD90C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E5E60307-8D32-42EA-BC6D-0F9D3AFD90C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E5E60307-8D32-42EA-BC6D-0F9D3AFD90C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BAC9A863-67E2-4682-8A3D-C46D807B8058}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAC9A863-67E2-4682-8A3D-C46D807B8058}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAC9A863-67E2-4682-8A3D-C46D807B8058}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAC9A863-67E2-4682-8A3D-C46D807B8058}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D008C94D-E851-49D9-BE74-B48423CE38E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D008C94D-E851-49D9-BE74-B48423CE38E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D008C94D-E851-49D9-BE74-B48423CE38E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D008C94D-E851-49D9-BE74-B48423CE38E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4FBDE761-5C80-4C9C-88CD-3DFC87A7BC50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FBDE761-5C80-4C9C-88CD-3DFC87A7BC50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FBDE761-5C80-4C9C-88CD-3DFC87A7BC50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FBDE761-5C80-4C9C-88CD-3DFC87A7BC50}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

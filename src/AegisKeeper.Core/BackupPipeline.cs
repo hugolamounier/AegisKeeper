@@ -1,7 +1,6 @@
 ﻿using System.Threading.Tasks.Dataflow;
-using AegisKeeper.Core.Entities;
-using AegisKeeper.Core.Interfaces;
-using AegisKeeper.Core.Models;
+using AegisKeeper.Shared.Entities;
+using AegisKeeper.Shared.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;

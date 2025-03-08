@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks.Dataflow;
-using AegisKeeper.Core.Entities;
 using AegisKeeper.Core.Models;
+using AegisKeeper.Shared.Entities;
 using Microsoft.Extensions.Logging;
 
 namespace AegisKeeper.Core;

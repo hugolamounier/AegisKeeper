@@ -1,10 +1,6 @@
-﻿using AegisKeeper.Core.Entities;
-using AegisKeeper.Core.Interfaces;
-using AegisKeeper.Core.Models;
-using AegisKeeper.Core.Models.Configurations;
-using Microsoft.Data.SqlClient;
+﻿using AegisKeeper.Shared.Entities;
+using AegisKeeper.Shared.Interfaces;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using Microsoft.SqlServer.Dac;
 
 namespace AegisKeeper.Database.SQLServer;
@@ -15,24 +11,18 @@ public class SqlServerProvider: IDatabase
     private readonly ILogger<SqlServerProvider> _logger;
     private readonly string _connectionString;
 
-    public SqlServerProvider(IOptions<AegisKeeperSettings> options, ILogger<SqlServerProvider> logger)
+    public SqlServerProvider(ILogger<SqlServerProvider> logger, DatabaseServer databaseServer)
     {
-        _connectionString = options.Value.ConnectionString;
-        ConnectionStringValidator.Validate(_connectionString, out var sqlConnectionStringBuilder);
-
         _logger = logger;
-        Servername = sqlConnectionStringBuilder.DataSource;
+        _connectionString = databaseServer.ConnectionString;
+        
+        ConnectionStringValidator.Validate(_connectionString);
     }
-    
-    public string Servername { get; }
 
     public Task<Stream> BackupAsync(Backup backup, CancellationToken cancellationToken = default)
     {
         try
         {
-            if(backup.DatabaseProvider is not DatabaseProviders.SQLServer)
-                throw new ApplicationException($"Unexpected database provider type: {backup.DatabaseProvider.ToString()}");
-
             var dacServices = new DacServices(_connectionString);
             
             dacServices.ExportBacpac(
@@ -48,10 +38,15 @@ public class SqlServerProvider: IDatabase
         }
         catch (Exception e)
         {
-            _logger.LogError(e, "Error while backing up '{DatabaseName}' database from '{ServerName}'",
-                backup.Database, Servername);
+            _logger.LogError(e, "Error while backing up '{DatabaseName}' database from Server: '{DatabaseServerId}'",
+                backup.Database, backup.DatabaseServerId);
 
             throw;
         }
+    }
+
+    public void Dispose()
+    {
+        // ignored
     }
 }

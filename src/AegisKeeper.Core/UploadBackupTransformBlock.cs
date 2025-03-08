@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks.Dataflow;
-using AegisKeeper.Core.Entities;
 using AegisKeeper.Core.Models;
+using AegisKeeper.Shared.Entities;
 using Microsoft.Extensions.Logging;
 
 namespace AegisKeeper.Core;
@@ -24,11 +24,7 @@ public partial class BackupPipeline
             using var scope = _serviceScopeFactory.CreateScope();
             var storage = GetStorage(scope);
             
-            var backupFileName = DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss") + ".bacpac";
-            var folderName = backup.Database;
-            
-            await storage.UploadAsync(backupFileName, folderName, backup.Content);
-
+            await storage.UploadAsync(backup, _cancellationToken);
             await backup.Content.DisposeAsync();
 
             return backup;
