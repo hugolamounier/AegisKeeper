@@ -2,7 +2,7 @@ using AegisKeeper.Core;
 using AegisKeeper.Core.Entities;
 using AegisKeeper.Core.Models;
 
-namespace AegisKeeper;
+namespace AegisKeeper_Old;
 
 public class Worker(BackupPipeline backupPipeline, ILogger<Worker> logger) : BackgroundService
 {
@@ -16,7 +16,7 @@ public class Worker(BackupPipeline backupPipeline, ILogger<Worker> logger) : Bac
             {
                 DatabaseProvider = DatabaseProviders.SQLServer,
                 StorageProvider = StorageProviders.GoogleCloud,
-                Database = "Geonew"
+                Database = "Geonew-Dev"
             };
             
             await backupPipeline.EnqueueAsync(backup);

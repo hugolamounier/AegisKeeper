@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Worker">
+<Project Sdk="Microsoft.NET.Sdk.Web">
 
     <PropertyGroup>
         <TargetFramework>net8.0</TargetFramework>
@@ -22,6 +22,10 @@
       <ProjectReference Include="..\AegisKeeper.Core\AegisKeeper.Core.csproj" />
       <ProjectReference Include="..\AegisKeeper.Database.SQLServer\AegisKeeper.Database.SQLServer.csproj" />
       <ProjectReference Include="..\AegisKeeper.Storage.Google\AegisKeeper.Storage.Google.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Properties\launchSettings.json" />
     </ItemGroup>
     
     <Target Name="RestoreTools" BeforeTargets="Build">
