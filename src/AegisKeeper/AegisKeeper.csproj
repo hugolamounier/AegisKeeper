@@ -21,23 +21,10 @@
     <ProjectReference Include="..\AegisKeeper.Database.SQLServer\AegisKeeper.Database.SQLServer.csproj" />
     <ProjectReference Include="..\AegisKeeper.Storage.Google\AegisKeeper.Storage.Google.csproj" />
   </ItemGroup>
-  
-  <ItemGroup>
-    <Content Include="..\..\.dockerignore">
-      <Link>.dockerignore</Link>
-    </Content>
-    <Content Include="..\..\aegiskeeper.sqlite">
-      <Link>aegiskeeper.sqlite</Link>
-    </Content>
-  </ItemGroup>
 
   <ItemGroup>
     <_ContentIncludedByDefault Remove="AegisKeeper.Client\obj\AegisKeeper.Client.csproj.nuget.dgspec.json" />
     <_ContentIncludedByDefault Remove="AegisKeeper.Client\obj\project.assets.json" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Migrations\" />
   </ItemGroup>
 
 </Project>
