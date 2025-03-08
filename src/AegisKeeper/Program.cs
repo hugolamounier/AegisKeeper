@@ -1,11 +1,9 @@
 using MudBlazor.Services;
 using AegisKeeper.Components;
 using AegisKeeper.Core;
-using AegisKeeper.Core.Models;
-using AegisKeeper.Core.Models.Configurations;
-using AegisKeeper.Database.SQLServer;
+using AegisKeeper.Infrastructure.Context;
 using AegisKeeper.Shared.Models.Configurations;
-using AegisKeeper.Storage.Google;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,9 +19,12 @@ builder.Services.Configure<AegisKeeperSettings>(builder.Configuration.GetSection
 
 var settings = builder.Configuration.GetSection("Settings").Get<AegisKeeperSettings>()!;
 
+builder.Services.AddDbContext<ApplicationContext>(options =>
+{
+    options.UseSqlite("Data Source=aegiskeeper.sqlite");
+});
 builder.Services.AddSingleton<BackupPipeline>();
 //builder.Services.AddHostedService<Worker>();
-
 
 var app = builder.Build();
 

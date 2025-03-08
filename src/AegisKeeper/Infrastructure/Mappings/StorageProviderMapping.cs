@@ -7,6 +7,7 @@ public class StorageProviderMapping: BaseMapping<StorageProvider>
 {
     protected override void Map(EntityTypeBuilder<StorageProvider> builder)
     {
+        builder.Property(x => x.Name).IsRequired();
         builder.Property(x => x.Provider).IsRequired();
         builder.Property(x => x.StorageName).IsRequired();
         builder.Property(x => x.ContainerName).IsRequired();

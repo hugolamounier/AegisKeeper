@@ -4,6 +4,7 @@ namespace AegisKeeper.Shared.Entities;
 
 public class StorageProvider: BaseEntity
 {
+    public string Name { get; set; }
     public StorageProviderType Provider { get; set; }
     
     /// <summary>

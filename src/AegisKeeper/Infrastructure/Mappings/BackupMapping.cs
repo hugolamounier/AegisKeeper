@@ -9,8 +9,8 @@ public class BackupMapping: BaseMapping<Backup>
 {
     protected override void Map(EntityTypeBuilder<Backup> builder)
     {
-        builder.HasIndex(x => x.StorageProvider);
-        builder.HasIndex(x => x.DatabaseServer);
+        builder.HasIndex(x => x.DatabaseServerId);
+        builder.HasIndex(x => x.StorageProviderId);
         
         builder.Property(x => x.DatabaseServerId).IsRequired();
         builder.Property(x => x.StorageProviderId).IsRequired();
@@ -24,7 +24,7 @@ public class BackupMapping: BaseMapping<Backup>
             .IsRequired()
             .HasDefaultValue(PipelineSteps.Initializing);
 
-        builder.HasOne(x => x.DatabaseServer).WithMany();
-        builder.HasOne(x => x.StorageProvider).WithMany();
+        builder.HasOne(x => x.DatabaseServer).WithMany().HasForeignKey(x => x.DatabaseServerId);
+        builder.HasOne(x => x.StorageProvider).WithMany().HasForeignKey(x => x.StorageProviderId);
     }
 }
